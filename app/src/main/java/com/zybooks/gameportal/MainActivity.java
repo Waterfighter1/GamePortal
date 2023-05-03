@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent nextScreen = new Intent(MainActivity.this, gameselect.class);
                 startActivity(nextScreen);
+                // TO DO: PASS DATA THROUGH SHARED PREFERENCES
             }
         });
 

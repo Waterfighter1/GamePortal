@@ -2,9 +2,118 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/s"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tictactoe"
-    android:background="#7E92AA">
+    android:background="#7E92AA"
+    tools:context=".tictactoe">
 
+    <ImageView
+        android:id="@+id/grid"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/grid" />
+
+    <ImageView
+        android:id="@+id/spot5"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot11"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot10"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot7"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintEnd_toStartOf="@+id/spot8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toBottomOf="@+id/spot4"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot4"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toBottomOf="@+id/spot1"
+        app:layout_constraintVertical_bias="0.115"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot1"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot3"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="248dp"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot2"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBottom_toTopOf="@+id/spot5"
+        app:layout_constraintStart_toStartOf="@+id/spot1"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/spot8"
+        android:layout_width="99dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toBottomOf="@+id/spot5"
+        app:srcCompat="@drawable/x" />
 </androidx.constraintlayout.widget.ConstraintLayout>
