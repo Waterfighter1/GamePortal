@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">The Game\nBoard</string>
+
+    <string name='p1_n'> Player 1\'s Name</string>
+    <string name='p1_p'> Player 1</string>
+    <string name='p2_n'> Player 2\'s Name</string>
+    <string name='p2_p'> Player 2</string>
+</resources>
