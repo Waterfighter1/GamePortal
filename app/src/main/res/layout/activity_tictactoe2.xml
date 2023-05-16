@@ -9,15 +9,43 @@
     tools:context=".tictactoe">
 
     <TextView
+        android:id="@+id/currentTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <TextView
         android:id="@+id/p2_displayName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/turn" />
+
+    <TextView
+        android:id="@+id/turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p1_displayName" />
 
     <TextView
         android:id="@+id/p1_displayName"
@@ -41,7 +69,7 @@
         app:srcCompat="@drawable/grid" />
 
     <ImageView
-        android:id="@+id/spot5"
+        android:id="@+id/spot6"
         android:layout_width="99dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="@+id/grid"
@@ -52,7 +80,7 @@
         app:srcCompat="@drawable/x" />
 
     <ImageView
-        android:id="@+id/spot11"
+        android:id="@+id/spot9"
         android:layout_width="99dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="@+id/grid"
@@ -64,7 +92,7 @@
         app:srcCompat="@drawable/x" />
 
     <ImageView
-        android:id="@+id/spot10"
+        android:id="@+id/spot5"
         android:layout_width="99dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="@+id/grid"
@@ -122,7 +150,7 @@
         android:layout_width="99dp"
         android:layout_height="106dp"
         android:layout_marginStart="120dp"
-        app:layout_constraintBottom_toTopOf="@+id/spot5"
+        app:layout_constraintBottom_toTopOf="@+id/spot6"
         app:layout_constraintStart_toStartOf="@+id/spot1"
         app:layout_constraintTop_toTopOf="@+id/grid"
         app:layout_constraintVertical_bias="0.0"
@@ -136,6 +164,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/grid"
         app:layout_constraintEnd_toEndOf="@+id/grid"
         app:layout_constraintStart_toStartOf="@+id/grid"
-        app:layout_constraintTop_toBottomOf="@+id/spot5"
+        app:layout_constraintTop_toBottomOf="@+id/spot6"
         app:srcCompat="@drawable/x" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,6 @@
     <string name='p1_p'> Player 1</string>
     <string name='p2_n'> Player 2\'s Name</string>
     <string name='p2_p'> Player 2</string>
+
+    <string name='player_turn'>\'s Turn</string>
 </resources>
