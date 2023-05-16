@@ -3,6 +3,7 @@ package com.zybooks.gameportal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class tictactoe extends AppCompatActivity {
+public class tictactoe extends views {
+
+    MediaPlayer mediaPlayer;
+    int[] spots_id = new int[9];
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,7 +48,7 @@ public class tictactoe extends AppCompatActivity {
         p2Name.setText(p2);
 
         ImageView[] spots = new ImageView[9];
-        int[] spots_id = new int[9];
+        spots_id = new int[9];
 
         spots[0] = (ImageView) findViewById(R.id.spot1);
         spots[1] = (ImageView) findViewById(R.id.spot2);
@@ -73,6 +77,9 @@ public class tictactoe extends AppCompatActivity {
 
                     if (pref.getString(String.valueOf(view.getId()), null) == null) {
 
+                        mediaPlayer = MediaPlayer.create(tictactoe.this,R.raw.click);
+                        mediaPlayer.start();
+
                         if (turn.getText() == "x") {
                             spot.setImageResource(R.drawable.x);
                             turn.setText("o");
@@ -99,5 +106,11 @@ public class tictactoe extends AppCompatActivity {
                 }
             });
         }
+    }
+    // On destroy release the media player as to not take up memory!
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.release();
     }
 }
