@@ -137,7 +137,7 @@ public class tictactoe extends views {
                         // HORIZONTAL
                         // 1 2 3
                         if ((pref.getString(String.valueOf(spots_id[0]), "1") == pref.getString(String.valueOf(spots_id[1]), "2")) && (pref.getString(String.valueOf(spots_id[1]), "2") == pref.getString(String.valueOf(spots_id[2]), "3"))) {
-                            winner.setText(pref.getString(String.valueOf(spots_id[0]) , "none"));
+                           winner.setText(pref.getString(String.valueOf(spots_id[0]) , "none"));
                         }
                         // 4 5 6
                         else if ((pref.getString(String.valueOf(spots_id[3]), "4") == pref.getString(String.valueOf(spots_id[4]), "5")) && (pref.getString(String.valueOf(spots_id[4]), "5") == pref.getString(String.valueOf(spots_id[5]), "6"))) {
@@ -168,7 +168,7 @@ public class tictactoe extends views {
                             winner.setText(pref.getString(String.valueOf(spots_id[0]) , "none"));
                         }
                         // 3 5 7
-                        else if ((pref.getString(String.valueOf(spots_id[2]), "3") == pref.getString(String.valueOf(spots_id[5]), "6")) && (pref.getString(String.valueOf(spots_id[5]), "6") == pref.getString(String.valueOf(spots_id[6]), "7"))) {
+                        else if ((pref.getString(String.valueOf(spots_id[2]), "3") == pref.getString(String.valueOf(spots_id[4]), "5")) && (pref.getString(String.valueOf(spots_id[4]), "5") == pref.getString(String.valueOf(spots_id[6]), "7"))) {
                             winner.setText(pref.getString(String.valueOf(spots_id[2]) , "none"));
                         }
 
