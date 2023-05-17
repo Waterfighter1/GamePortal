@@ -174,7 +174,7 @@ public class tictactoe extends views {
 
 
                         // CHECK FOR CAT
-                        if ((pref.getString(String.valueOf(spots_id[0]), "N") != "N") && (pref.getString(String.valueOf(spots_id[1]), "N") != "N") && (pref.getString(String.valueOf(spots_id[2]), "N") != "N") && (pref.getString(String.valueOf(spots_id[3]), "N") != "N") && (pref.getString(String.valueOf(spots_id[4]), "N") != "N") && (pref.getString(String.valueOf(spots_id[5]), "N") != "N") && (pref.getString(String.valueOf(spots_id[6]), "N") != "N") && (pref.getString(String.valueOf(spots_id[7]), "N") != "N") && (pref.getString(String.valueOf(spots_id[8]), "N") != "N")){
+                        else if ((pref.getString(String.valueOf(spots_id[0]), "N") != "N") && (pref.getString(String.valueOf(spots_id[1]), "N") != "N") && (pref.getString(String.valueOf(spots_id[2]), "N") != "N") && (pref.getString(String.valueOf(spots_id[3]), "N") != "N") && (pref.getString(String.valueOf(spots_id[4]), "N") != "N") && (pref.getString(String.valueOf(spots_id[5]), "N") != "N") && (pref.getString(String.valueOf(spots_id[6]), "N") != "N") && (pref.getString(String.valueOf(spots_id[7]), "N") != "N") && (pref.getString(String.valueOf(spots_id[8]), "N") != "N")){
                             winner.setText("c");
                         }
 
