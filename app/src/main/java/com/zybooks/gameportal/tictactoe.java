@@ -33,6 +33,7 @@ public class tictactoe extends views {
         // Set Some Views To Invisible
         winner.setVisibility(View.GONE);
         turn.setVisibility(View.GONE);
+        reset.setVisibility(View.GONE);
 
         winner.setText("none");
         turn.setText("x");
@@ -175,15 +176,81 @@ public class tictactoe extends views {
                         // If the winner is X
                         if (winner.getText() == "x") {
                             currentTurnDisplay.setText(pref.getString("p1_name", "Player 1") + " wins!");
+                            Button reset = (Button) findViewById(R.id.reset);
+                            reset.setVisibility(View.VISIBLE);
                         }
                         // If the winner is O
                         else if (winner.getText() == "o") {
                             currentTurnDisplay.setText(pref.getString("p2_name", "Player 2") + " wins!");
+                            Button reset = (Button) findViewById(R.id.reset);
+                            reset.setVisibility(View.VISIBLE);
                         }
 
                     } // End of Checking If No Winner and Space Not Occupied
                 } // End of On Click
             }); // End of Outer On Click Listener
+
+            reset.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Data Holding Views
+                    TextView winner = (TextView) findViewById(R.id.winner);
+                    TextView turn = (TextView) findViewById(R.id.turn);
+                    Button reset = (Button) findViewById(R.id.reset);
+                    TextView currentTurnDisplay = (TextView) findViewById(R.id.currentTurn);
+
+                    // Set Some Views To Invisible
+                    winner.setVisibility(View.GONE);
+                    turn.setVisibility(View.GONE);
+                    reset.setVisibility(View.GONE);
+
+                    // Getting First Players Name
+                    String p1 = pref.getString("p1_name", "Player 1");
+
+                    // Reset THe Title
+                    currentTurnDisplay.setText(p1 + getResources().getString(R.string.player_turn) + " (X)");
+
+                    // Reset Data Views
+                    winner.setText("none");
+                    turn.setText("x");
+
+                    // Defining Shared Preferences Things
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    // Defining The Spot's Views and Their ID's ( To Check For Wins, Etc. )
+                    ImageView[] spots = new ImageView[9];
+                    spots_id = new int[9];
+
+
+                    // Make The Array
+                    spots[0] = (ImageView) findViewById(R.id.spot1);
+                    spots[1] = (ImageView) findViewById(R.id.spot2);
+                    spots[2] = (ImageView) findViewById(R.id.spot3);
+                    spots[3] = (ImageView) findViewById(R.id.spot4);
+                    spots[4] = (ImageView) findViewById(R.id.spot5);
+                    spots[5] = (ImageView) findViewById(R.id.spot6);
+                    spots[6] = (ImageView) findViewById(R.id.spot7);
+                    spots[7] = (ImageView) findViewById(R.id.spot8);
+                    spots[8] = (ImageView) findViewById(R.id.spot9);
+
+                    // For Each Of The Spots Reset The Stuff
+                    for (int i = 0; i < spots.length; i++) {
+                        // Rename it to make my life easier
+                        ImageView spot = spots[i];
+
+                        // Set the Spot ID To The Parallel
+                        spots_id[i] = spot.getId();
+
+                        // Go Ahead And Restart It ( Destroy The Previous Game )
+                        pref.edit().remove(String.valueOf(spots_id[i])).commit();
+
+                        // Setting The Images To Empty As Default
+                        spot.setImageResource(R.drawable.empty);
+                    }
+                }
+            });
+
         } // For Statement
     } // End of On Create
 
