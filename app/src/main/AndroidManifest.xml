@@ -12,6 +12,14 @@
         android:theme="@style/Theme.GamePortal"
         tools:targetApi="31" >
         <activity
+            android:name=".workinprogress"
+            android:exported="false" />
+        <activity
+            android:name=".working"
+            android:exported="false"
+            android:label="@string/title_activity_working"
+            android:theme="@style/Theme.GamePortal.NoActionBar" />
+        <activity
             android:name=".helpscreen"
             android:exported="false" />
         <activity

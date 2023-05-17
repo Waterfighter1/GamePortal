@@ -173,6 +173,12 @@ public class tictactoe extends views {
                         }
 
 
+                        // CHECK FOR CAT
+                        if ((pref.getString(String.valueOf(spots_id[0]), "N") != "N") && (pref.getString(String.valueOf(spots_id[1]), "N") != "N") && (pref.getString(String.valueOf(spots_id[2]), "N") != "N") && (pref.getString(String.valueOf(spots_id[3]), "N") != "N") && (pref.getString(String.valueOf(spots_id[4]), "N") != "N") && (pref.getString(String.valueOf(spots_id[5]), "N") != "N") && (pref.getString(String.valueOf(spots_id[6]), "N") != "N") && (pref.getString(String.valueOf(spots_id[7]), "N") != "N") && (pref.getString(String.valueOf(spots_id[8]), "N") != "N")){
+                            winner.setText("c");
+                        }
+
+
                         // If the winner is X
                         if (winner.getText() == "x") {
                             currentTurnDisplay.setText(pref.getString("p1_name", "Player 1") + " wins!");
@@ -182,6 +188,11 @@ public class tictactoe extends views {
                         // If the winner is O
                         else if (winner.getText() == "o") {
                             currentTurnDisplay.setText(pref.getString("p2_name", "Player 2") + " wins!");
+                            Button reset = (Button) findViewById(R.id.reset);
+                            reset.setVisibility(View.VISIBLE);
+                        }
+                        else if (winner.getText() == "c") {
+                            currentTurnDisplay.setText("Cat's Game!");
                             Button reset = (Button) findViewById(R.id.reset);
                             reset.setVisibility(View.VISIBLE);
                         }
@@ -257,7 +268,13 @@ public class tictactoe extends views {
     // On destroy release the media player as to not take up memory
     @Override
     protected void onDestroy() {
+
         super.onDestroy();
-        mediaPlayer.release();
+        try {
+            mediaPlayer.release();
+        }
+        catch (Exception e) {
+            // Just need to make sure it wont error out for not existing
+        }
     }
 }

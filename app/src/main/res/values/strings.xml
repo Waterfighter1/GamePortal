@@ -10,5 +10,15 @@
 
     <string name="reset"> Reset Game</string>
 
+    <string name="help_tic">Tic Tac Toe Help</string>
+    <string name="help_pong">Pong Help</string>
+    <string name="help_connect">Connect 4 Help</string>
+
+    <string name="help_tic_desc">Turns are displayed on the top of the screen.\n\nOn your turn, select the space you\'d like to occupy.\n\nOnce the game is over, a button will display to reset the game </string>
     <string name='player_turn'>\'s Turn</string>
+
+    <string name="wip_title">Game Not Available</string>
+    <string name="wip_desc"> This Game Is Not Available For The Current Version You Have. Look Forward To Future Updates :D</string>
+
+    <string name="title_activity_working"> working</string>
 </resources>

@@ -27,7 +27,11 @@ public class MainActivity extends views {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Find The Button ( Next Button )
+
         Button btn = (Button) findViewById(R.id.next);
+
+        // Shared Preference Setup
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
         SharedPreferences.Editor editor = pref.edit();
@@ -35,25 +39,31 @@ public class MainActivity extends views {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Get The Edit Text Boxes Defined
                 EditText p1_name_box = (EditText)findViewById(R.id.edit_player1);
-                String p1_name = p1_name_box.getText().toString();
-
                 EditText p2_name_box = (EditText)findViewById(R.id.edit_player2);
+
+                // Get The Data
+                String p1_name = p1_name_box.getText().toString();
                 String p2_name = p2_name_box.getText().toString();
+
+                // If They're Empty Or A Space, Default The Names To Their Respective Player
 
                 if (p1_name == "" || p1_name == " " || p1_name == null || p1_name.length() < 1) {
                     p1_name = "Player 1";
                 }
-
                 if (p2_name == "" || p2_name == " " || p2_name == null || p2_name.length() < 1) {
                     p2_name = "Player 2";
                 }
 
+                // Put The Names In Shared Preference
                 editor.putString("p1_name", p1_name); // Storing string
                 editor.putString("p2_name", p2_name); // Storing string
 
+                // COMMIT
                 editor.commit();
 
+                // New Intent :)
                 Intent nextScreen = new Intent(MainActivity.this, gameselect.class);
                 startActivity(nextScreen);
 
